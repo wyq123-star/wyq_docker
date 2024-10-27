@@ -1,7 +1,7 @@
 FROM osrf/ros:humble-desktop-full
 
 # 定义用户和用户组
-ARG USERNAME=nagisa
+ARG USERNAME=wyq
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
@@ -30,7 +30,7 @@ WORKDIR /home/$USERNAME/opencv
 USER root
 
 # 安装 GitKraken
-COPY ./packages/gitkraken-amd64.deb /home/nagisa/opencv/packages/gitkraken-amd64.deb
+COPY ./packages/gitkraken-amd64.deb /home/wyq/opencv/packages/gitkraken-amd64.deb
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ./packages/gitkraken-amd64.deb
 
 # 切换回 wyq用户并设置命令
